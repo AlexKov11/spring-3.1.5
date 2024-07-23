@@ -49,9 +49,9 @@ public class AdminController {
         return ResponseEntity.ok(response);
     }
 
-    @PatchMapping("/users/{id}")
+    @PatchMapping("/edit/{id}")
     public ResponseEntity<User> update(@RequestBody User user) {
-        userService.saveUser(user);
+        userService.updateUser(user, new HashSet<>());
         return ResponseEntity.ok().build();
     }
 

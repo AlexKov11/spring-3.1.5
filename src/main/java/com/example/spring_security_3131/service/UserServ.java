@@ -16,5 +16,6 @@ public interface UserServ {
     User getUserById(Long id);
 
     void deleteUser(Long id);
+    boolean updateUser(User userUp, Set<Role> roles);
 
 }
