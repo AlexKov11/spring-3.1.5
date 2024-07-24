@@ -51,7 +51,7 @@ public class AdminController {
 
     @PatchMapping("/edit/{id}")
     public ResponseEntity<User> update(@RequestBody User user) {
-        userService.updateUser(user, new HashSet<>());
+        userService.saveUser(user);
         return ResponseEntity.ok().build();
     }
 

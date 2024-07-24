@@ -32,8 +32,8 @@ public class WebSecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(a -> a
                         .requestMatchers("/").permitAll()
-                        .requestMatchers("/adminProfile/**").hasRole("ADMIN")
-                        .requestMatchers("/userProfile/**").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated())
                 .formLogin(f -> f.successHandler(successUserHandler))
                 .logout(LogoutConfigurer::permitAll);

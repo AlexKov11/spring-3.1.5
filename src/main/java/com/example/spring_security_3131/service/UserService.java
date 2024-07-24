@@ -76,21 +76,21 @@ public class UserService implements UserDetailsService, UserServ {
         }
     }
 
-    @Override
-    @Transactional
-    public boolean updateUser(User userUp, Set<Role> roles) {
-        User userFromDB = userRepo.findById(userUp.getId()).orElse(null);
-        if (userFromDB != null) {
-            userFromDB.setUsername(userUp.getUsername());
-            userFromDB.setPassword(passwordEncoder.encode(userUp.getPassword()));
-            userFromDB.setEmail(userUp.getEmail());
-            userFromDB.setRoles(roles);
-            userRepo.save(userFromDB);
-            return true;
-        } else {
-            return false;
-        }
-    }
+//    @Override
+//    @Transactional
+//    public boolean updateUser(User userUp, Set<Role> roles) {
+//        User userFromDB = userRepo.findById(userUp.getId()).orElse(null);
+//        if (userFromDB != null) {
+//            userFromDB.setUsername(userUp.getUsername());
+//            userFromDB.setPassword(passwordEncoder.encode(userUp.getPassword()));
+//            userFromDB.setEmail(userUp.getEmail());
+//            userFromDB.setRoles(roles);
+//            userRepo.save(userFromDB);
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
 
     @Override
     @Transactional
